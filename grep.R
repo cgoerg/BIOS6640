@@ -7,6 +7,12 @@ n_drug_index <- grep("Nal",df$drug)
 either_drug_index <- grep("Bup|Nal",df$drug) 
 both_drugs_index <- grep("(?=.*Bup)(?=.*Nal)", df$drug, perl=T)
 
+drug <- rep(0,4)
+drug[b_drug_index] <- 1
+drug[n_drug_index] <- 2
+drug[both_drugs_index] <- 3
+drug
+
 bup <- rep(0,4)  # initialize bup with zeros
 nal <- rep(0,4)  # initialize nal with zeros
 bup[b_drug_index] <- 1  # use index to set bup rowx to 1
